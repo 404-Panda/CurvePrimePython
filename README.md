@@ -1,7 +1,7 @@
 # Python Script for Cryptographic Bitcoin Puzzles
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/DaCryptoRaccoon/CurvePrimePython">
+  <img src="https://img.shields.io/github/license/DaCryptoRaccoon/CurvePrimePython/blob/main/License">
   <img src="https://img.shields.io/github/languages/top/DaCryptoRaccoon/CurvePrimePython">
 </p>
 
