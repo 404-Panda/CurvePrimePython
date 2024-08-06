@@ -8,8 +8,10 @@
 As the architect of this multifaceted Python script, I designed it to delve into cryptographic puzzles associated with Bitcoin. This tool not only generates Bitcoin addresses from private keys derived within specific numerical ranges but also explores prime gaps and their properties extensively.
 
 <p align="center">
-  <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/1.jpg" alt="KeyTools">
+  <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/video.gif" alt="KeyTools">
 </p>
+
+
 
 ## How To Install
 
