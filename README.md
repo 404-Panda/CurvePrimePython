@@ -351,7 +351,9 @@ Cryptographic Calculations
 Merit of a Prime Gap
 The merit of a prime gap offers insight into the significance of the gap relative to the prime itself, calculated as:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;Merit=\frac{Gap}{\log(Prime)}" title="\Large Merit=\frac{Gap}{\log(Prime)}" />
+<p align="center">
+  <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/5.jpg" alt="KeyTools">
+</p>
 This formula adjusts the raw gap size by the natural logarithm of the prime, providing a normalized measure of the gap's rarity or significance.
 
 Difficulty Calculation
