@@ -400,3 +400,8 @@ This detailed examination not only underscores the script's capabilities in hand
 This amalgamates complex mathematical theories with practical implementations of cryptography, offering a robust platform for exploring prime numbers, generating Bitcoin addresses, and assessing cryptographic metrics. By continuously monitoring, adjusting, and logging its operations, it not only serves as a tool for generating cryptographic assets but also provides insights into the deeper mathematical structures that underpin modern cryptography and blockchain technology.
 
 Happy Hunting! 
+
+This project is licensed under the MIT License.
+<p align="center">
+  Made with ❤️ DaCryptoRaccoon
+</p>
