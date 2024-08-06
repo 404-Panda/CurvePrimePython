@@ -1,5 +1,8 @@
 # Python Script for Cryptographic Bitcoin Puzzles
 
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/>
+  <img src="https://github.com/spothq/cryptocurrency-icons/blob/master/32%402x/color/btc%402x.png" alt="Bitcoin" width="40" height="40"/>
+
 As the architect of this multifaceted Python script, I designed it to delve into cryptographic puzzles associated with Bitcoin. This tool not only generates Bitcoin addresses from private keys derived within specific numerical ranges but also explores prime gaps and their properties extensively.
 
 <p align="center">
