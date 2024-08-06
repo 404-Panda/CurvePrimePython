@@ -357,10 +357,14 @@ This formula adjusts the raw gap size by the natural logarithm of the prime, pro
 Difficulty Calculation
 To introduce variability and challenge in evaluating prime gaps, a difficulty metric is calculated by incorporating a random factor:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;Difficulty=\frac{Gap}{\log(Prime)}+\left(\frac{2}{\log(Prime)}\right)\times RandomFactor" title="\Large Difficulty=\frac{Gap}{\log(Prime)}+\left(\frac{2}{\log(Prime)}\right)\times RandomFactor" />
+<p align="center">
+  <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/4.jpg" alt="KeyTools">
+</p>
+
 Here, RandomFactor is a random number between 0 and 1, adding an element of unpredictability to the difficulty, simulating conditions akin to cryptographic proofs or mining challenges.
 
 Bitcoin Address Generation
+
 Generating a Bitcoin address from a private key involves several steps rooted in cryptographic algorithms:
 
 Private Key Generation: Each prime number from the generated list is considered as a potential private key (PVK).
@@ -370,6 +374,7 @@ Bitcoin Address Computation: The public key is then processed through Bitcoin's 
 The entire process adheres to Bitcoin's cryptographic protocols, ensuring that the addresses are valid for transactions within the Bitcoin network.
 
 Concurrency and Efficiency
+
 To maximize efficiency, especially when dealing with I/O operations such as network requests to check Bitcoin address balances, the script employs Python’s concurrent.futures module. This module allows parallel execution of code, significantly speeding up the address generation and balance checking processes by utilizing multiple threads.
 
 ```
@@ -377,7 +382,9 @@ with ThreadPoolExecutor() as executor:
     future = executor.submit(check_balance, bitcoin_address)
     balance, api_status = future.result()
 ```
+
 Practical Applications and Implications
+
 The use of these mathematical and cryptographic principles allows for a robust exploration of both the theoretical and practical aspects of prime numbers within the context of blockchain and Bitcoin. By understanding the rarity and distribution of prime gaps, one can gain deeper insights into the mathematical underpinnings of cryptographic security and its implementation in modern blockchain technologies.
 
 This detailed examination not only underscores the script's capabilities in handling complex cryptographic tasks but also highlights its utility in educational and research-focused applications, particularly in fields related to cryptography and blockchain technology.
