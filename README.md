@@ -357,6 +357,7 @@ The merit of a prime gap offers insight into the significance of the gap relativ
 This formula adjusts the raw gap size by the natural logarithm of the prime, providing a normalized measure of the gap's rarity or significance.
 
 Difficulty Calculation
+
 To introduce variability and challenge in evaluating prime gaps, a difficulty metric is calculated by incorporating a random factor:
 
 <p align="center">
