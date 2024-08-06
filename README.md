@@ -11,6 +11,7 @@ As the architect of this multifaceted Python script, I designed it to delve into
   <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/video.gif" alt="KeyTools">
 </p>
 
+![Hunt Keys](https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/7.gif)
 
 
 ## How To Install
