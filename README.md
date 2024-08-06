@@ -6,6 +6,158 @@ As the architect of this multifaceted Python script, I designed it to delve into
   <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/1.jpg" alt="Descriptive Alt Text">
 </p>
 
+## How To Install
+
+## Setup Guide
+
+This project requires a fully synchronized Bitcoin node and a local instance of the Bitcoin ABE explorer, which will use a MySQL database for queries. The setup process is tailored for users with a basic understanding of Bitcoin's infrastructure and experience with Python, specifically Python 2.7.18.
+
+### Prerequisites
+- ** Ubuntu 22.04.4 LTS **: Build enviro
+- **Python 2.7.18**: The project is compatible with Python 2.7.18, and it is crucial to use this version to avoid compatibility issues with Bitcoin ABE.
+- **Bitcoin Core Node**: A running Bitcoin node is required for the Bitcoin ABE to access blockchain data.
+- **MySQL Database**: Bitcoin ABE will use a MySQL database to store and query blockchain data.
+
+### Step 1: Install Python 2.7.18
+
+Ensure that Python 2.7.18 is installed on your system. You can download it from the [official Python archives](https://www.python.org/downloads/release/python-2718/). 
+
+Follow the installation instructions specific to your operating system for this guide we will be building everything in Ubuntu 22.04.4 LTS
+
+### Step 2: Set Up a Bitcoin Node
+
+1. **Download Bitcoin Core**: You can download the latest version of Bitcoin Core from the [official repository](https://github.com/bitcoin/bitcoin). It's recommended to review the [build instructions for Unix](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md) if you are running on a Unix-based system.
+
+2. **Installation**: Follow the detailed instructions in the link provided to compile and install Bitcoin Core.
+
+3. **Blockchain Synchronization**: Run the Bitcoin Core client to start downloading the blockchain. This process can take a significant amount of time, depending on your internet connection and the hardware specifications of your system.
+
+## Step 3: Setup MYSQL DB
+
+Quick Guide to Create a MySQL Database for Bitcoin ABE
+Access MySQL Command Line by opening your terminal or command prompt.
+
+Connect to your MySQL server as the root user (or another user with sufficient privileges to create databases and users):
+```
+mysql -u root -p
+```
+
+You'll be prompted to enter the root user's password.
+
+Step 2: Create the Database
+
+Once you’re connected to MySQL, create a new database named BitcoinABE:
+```
+CREATE DATABASE BitcoinABE;
+```
+Step 3: Create a New User
+
+Create a new user and grant it access to the newly created database. This user will have the credentials specified in your connect-args. Adjust the credentials as necessary based on your security practices:
+```
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
+GRANT ALL PRIVILEGES ON BitcoinABE.* TO 'admin'@'localhost';
+FLUSH PRIVILEGES;
+```
+admin is the username.
+admin is the password. 
+
+(USE A SECURE PASSWORD JUST MAKE SURE YOU NOTE THIS DOWN YOU NEED IT FOR YOUR ABE CONF LATER IN THE SETUP.)
+
+localhost means this user can only connect from the local machine. 
+Change this if the user needs to connect from other hosts. (NOT ADVISED) 
+
+Step 4: Verify the Database and User
+To ensure the database and user are set up correctly, log in as the new user:
+```
+mysql -u admin -p
+```
+Once logged in, try accessing the BitcoinABE database:
+```
+USE BitcoinABE;
+```
+If there are no errors, the database and user are set up correctly.
+
+### Step 4: Set Up Bitcoin ABE
+
+1. **Clone Bitcoin ABE**: Bitcoin ABE is an open-source block explorer that reads the Bitcoin block file, transforms, and loads the data into a database. Clone the repository from GitHub:
+
+   ```bash
+   git clone https://github.com/bitcoin-abe/bitcoin-abe
+
+Move into the Bitcoin ABE directory and run
+
+python setup.py install
+
+This will install abe to your system. After you set up the config file and database (see below and README-.txt) 
+
+https://github.com/bitcoin-abe/bitcoin-abe/blob/master/README-MYSQL.txt
+
+next open the abe.conf file and add your MySQL config
+
+# MySQL example; see also README-MYSQL.txt:
+```
+dbtype = MySQLdb
+connect-args = {"user":"admin", "passwd":"admin", "db":"BitcoinABE"}
+```
+
+# Specify port and/or host to serve HTTP instead of FastCGI: <-- Used to show the ABE front end.
+```
+port 2760
+host localhost
+```
+
+# New coins typically need a new "address_version", see doc/FAQ.html.
+```
+datadir += [{
+    "dirname": "/path/to/.bitcoin",
+    "loader": "rpc",    # See the comments for default-loader below.
+    "chain": "Bitcoin",
+    "rpcuser": "Administrator",
+    "rpcpassword": "YourBitc0indRPCPa44wordSh0u3ldG0Here-Sec3ur3:Sup3RP@SSw0RdsOn1y"
+}]
+```
+# Filesystem location of static content, if served by Abe.
+```
+document-root = Abe/htdocs
+```
+
+# Uncomment "auto-agpl" to add a "Source" link to each page pointing
+# to a "/download" URL that streams the directory containing abe.py
+# and all subdirectories as a compressed TAR archive.  This exposes
+# files outside of the htdocs directory to the client, so use it with
+# caution.
+```
+auto-agpl
+```
+
+# Directory name and tarfile name prefix for auto-agpl source
+# download.
+```
+download-name = abe
+```
+
+One you have added the above settings you can then ensure your Bitcoind is running and run the following command.
+```
+python -m Abe.abe --config myconf.conf --commit-bytes 100000 --no-serve
+```
+You should start to see scroling output : 
+
+    block_tx 1 1
+    block_tx 2 2
+    ...
+
+This step may take several WEEKS OR MONTHS!!!! depending on chain size and hardware and config settings used..
+
+Please ensure you read about the abe.conf setting before running the command to start the data import. 
+
+You should now be able to access your ABE frontend and API via :
+```
+https://127.0.0.1:2760
+```
+<p align="center">
+  <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/2.jpg" alt="Abe Front End & API">
+</p>
+
 ## Puzzle Selection Mechanism
 
 ### Overview
