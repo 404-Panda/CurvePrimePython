@@ -3,7 +3,7 @@
 As the architect of this multifaceted Python script, I designed it to delve into cryptographic puzzles associated with Bitcoin. This tool not only generates Bitcoin addresses from private keys derived within specific numerical ranges but also explores prime gaps and their properties extensively.
 
 <p align="center">
-  <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/1.jpg" alt="Descriptive Alt Text">
+  <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/1.jpg" alt="KeyTools">
 </p>
 
 ## How To Install
@@ -94,19 +94,19 @@ https://github.com/bitcoin-abe/bitcoin-abe/blob/master/README-MYSQL.txt
 
 next open the abe.conf file and add your MySQL config
 
-# MySQL example; see also README-MYSQL.txt:
+MySQL example; see also README-MYSQL.txt:
 ```
 dbtype = MySQLdb
 connect-args = {"user":"admin", "passwd":"admin", "db":"BitcoinABE"}
 ```
 
-# Specify port and/or host to serve HTTP instead of FastCGI: <-- Used to show the ABE front end.
+Specify port and/or host to serve HTTP instead of FastCGI: <-- Used to show the ABE front end.
 ```
 port 2760
 host localhost
 ```
 
-# New coins typically need a new "address_version", see doc/FAQ.html.
+New coins typically need a new "address_version", see doc/FAQ.html.
 ```
 datadir += [{
     "dirname": "/path/to/.bitcoin",
@@ -116,22 +116,22 @@ datadir += [{
     "rpcpassword": "YourBitc0indRPCPa44wordSh0u3ldG0Here-Sec3ur3:Sup3RP@SSw0RdsOn1y"
 }]
 ```
-# Filesystem location of static content, if served by Abe.
+Filesystem location of static content, if served by Abe.
 ```
 document-root = Abe/htdocs
 ```
 
-# Uncomment "auto-agpl" to add a "Source" link to each page pointing
-# to a "/download" URL that streams the directory containing abe.py
-# and all subdirectories as a compressed TAR archive.  This exposes
-# files outside of the htdocs directory to the client, so use it with
-# caution.
+Uncomment "auto-agpl" to add a "Source" link to each page pointing
+to a "/download" URL that streams the directory containing abe.py
+and all subdirectories as a compressed TAR archive.  This exposes
+files outside of the htdocs directory to the client, so use it with
+caution.
 ```
 auto-agpl
 ```
 
-# Directory name and tarfile name prefix for auto-agpl source
-# download.
+Directory name and tarfile name prefix for auto-agpl source
+download.
 ```
 download-name = abe
 ```
@@ -221,7 +221,9 @@ Puzzle 3: Key Range 0x1B11... to 0x1B16..., Balance 0.00 BTC, Status Unsolved
 
 ### Cryptographic Calculations
 #### Merit of a Prime Gap
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;Merit=\frac{g}{\log(p)}" title="\Large Merit=\frac{g}{\log(p)}" />
+<p align="center">
+  <img src="https://github.com/DaCryptoRaccoon/CurvePrimePython/blob/main/3.jpg" alt="Merit of a Prime Gap">
+</p>
 
 - **Importance**: Provides insight into the size of the gap relative to the logarithmic scale of the prime.
 
