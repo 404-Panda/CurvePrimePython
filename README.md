@@ -398,7 +398,7 @@ Practical Applications and Implications
 
 The use of these mathematical and cryptographic principles allows for a robust exploration of both the theoretical and practical aspects of prime numbers within the context of blockchain and Bitcoin. By understanding the rarity and distribution of prime gaps, one can gain deeper insights into the mathematical underpinnings of cryptographic security and its implementation in modern blockchain technologies.
 
-This detailed examination not only underscores the script's capabilities in handling complex cryptographic tasks but also highlights its utility in educational and research-focused applications, particularly in fields related to cryptography and blockchain technology.
+This script's capabilities in handling complex cryptographic tasks but also highlights its utility in educational and research-focused applications, particularly in fields related to cryptography and blockchain technology.
 
 This amalgamates complex mathematical theories with practical implementations of cryptography, offering a robust platform for exploring prime numbers, generating Bitcoin addresses, and assessing cryptographic metrics. By continuously monitoring, adjusting, and logging its operations, it not only serves as a tool for generating cryptographic assets but also provides insights into the deeper mathematical structures that underpin modern cryptography and blockchain technology.
 
